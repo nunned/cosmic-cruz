@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import './styles/HomePage.css'; // Assuming you'll store styles in HomePage.css
+import './styles/homepage.css'; // Assuming you'll store styles in HomePage.css
 
 function HomePage() {
   return (

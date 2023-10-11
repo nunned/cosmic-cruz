@@ -1,6 +1,6 @@
 body[data-current-route="/home"],
 body[data-current-route="/"] {
-    background-image: url('src/assets/starry-bg.png');
+    background-image: url('./assets/starry-bg.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

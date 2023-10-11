@@ -3,7 +3,7 @@ import './styles/homepage.css'; // Assuming you'll store styles in HomePage.css
 
 function HomePage() {
   return (
-    <div>
+    <div className='bg-wrap'>
       <nav className="nav-list">
         <div className="item-container">
           <Link to="/barberservice" className="nav-sphere">Barbering Services</Link>

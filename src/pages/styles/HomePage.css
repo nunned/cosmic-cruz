@@ -1,0 +1,121 @@
+@keyframes float1 {
+  0% {
+    transform: translate(-50%, -50%) translate(20vw, 10vh);
+  }
+  50% {
+    transform: translate(-50%, -50%) translate(21vw, 11vh);
+  }
+  100% {
+    transform: translate(-50%, -50%) translate(20vw, 10vh);
+  }
+}
+
+@keyframes float2 {
+  0% {
+    transform: translate(-50%, -50%) translate(30vw, -15vh);
+  }
+  50% {
+    transform: translate(-50%, -50%) translate(29vw, -16vh);
+  }
+  100% {
+    transform: translate(-50%, -50%) translate(30vw, -15vh);
+  }
+}
+
+@keyframes float3 {
+  0% {
+    transform: translate(-50%, -50%) translate(-20vw, -20vh);
+  }
+  50% {
+    transform: translate(-50%, -50%) translate(-21vw, -19vh);
+  }
+  100% {
+    transform: translate(-50%, -50%) translate(-20vw, -20vh);
+  }
+}
+
+@keyframes float4 {
+  0% {
+    transform: translate(-50%, -50%) translate(-30vw, 15vh);
+  }
+  50% {
+    transform: translate(-50%, -50%) translate(-29vw, 14vh);
+  }
+  100% {
+    transform: translate(-50%, -50%) translate(-30vw, 15vh);
+  }
+}
+
+@keyframes float5 {
+  0% {
+    transform: translate(-50%, -50%) translate(0, 25vh);
+  }
+  50% {
+    transform: translate(-50%, -50%) translate(1vw, 24vh);
+  }
+  100% {
+    transform: translate(-50%, -50%) translate(0, 25vh);
+  }
+}
+
+.nav-list {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.item-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.item-container:nth-of-type(1) {
+  animation-name: float1;
+}
+
+.item-container:nth-of-type(2) {
+  animation-name: float2;
+}
+
+.item-container:nth-of-type(3) {
+  animation-name: float3;
+}
+
+.item-container:nth-of-type(4) {
+  animation-name: float4;
+}
+
+.item-container:nth-of-type(5) {
+  animation-name: float5;
+}
+
+.nav-sphere {
+  display: inline-block;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  line-height: 150px;
+  text-align: center;
+  text-decoration: none;
+  background-color: #3498db;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.nav-sphere:hover {
+  background-color: #2980b9;
+}
+
+@media (max-width: 768px) {
+  .nav-sphere {
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+  }
+  /* Adjust the translate values and animations for item-containers as needed */
+}

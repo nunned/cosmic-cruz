@@ -6,7 +6,7 @@ function HomePage() {
     <div className='bg-wrap'>
       <nav className="nav-list">
         <div className="item-container">
-          <Link to="/barberservice" className="nav-sphere">Barbering Services</Link>
+          <Link to="/barberservice" className="nav-sphere">Barbering</Link>
         </div>
         <div className="item-container">
           <Link to="/apparel" className="nav-sphere">Apparel</Link>

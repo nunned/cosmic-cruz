@@ -4,6 +4,8 @@ import './styles/homepage.css'; // Assuming you'll store styles in HomePage.css
 function HomePage() {
   return (
     <div className='bg-wrap'>
+    <div className="layer1"></div> {/* First additional layer */}
+      <div className="layer2"></div> {/* Second additional layer */}
       <nav className="nav-list">
         <div className="item-container">
           <Link to="/barberservice" className="nav-sphere">Barbering</Link>

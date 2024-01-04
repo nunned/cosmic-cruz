@@ -7,87 +7,27 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Centers the layers */
-  background-size: contain; /* Adjusts the size of the image to fit within the layer */
-  background-position: center; /* Centers the image in the layer */
-  background-repeat: no-repeat; /* Prevents the image from repeating */
+  transform: translate(-50%, -50%);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1; /* Ensures layers are above the background but below the nav items */
 }
 
 .layer1 {
   /* Styles for the first layer (stars) */
   background-image: url('../../assets/star_only.png');
-  opacity: 0.5; /* Adjust as needed */
-  width: 60%; /* Adjust as needed */
-  height: 60%; /* Adjust as needed */
+  opacity: 0.5;
+  width: 60%;
+  height: 60%;
 }
 
 .layer2 {
   /* Styles for the second layer (text) */
   background-image: url('../../assets/text-only.png');
-  opacity: 0.7; /* Adjust as needed */
-  width: 60%; /* Adjust as needed */
-  height: 60%; /* Adjust as needed */
-}
-
-
-@keyframes float1 {
-  0% {
-    transform: translate(-50%, -50%) translate(20vw, 10vh);
-  }
-  50% {
-    transform: translate(-50%, -50%) translate(21vw, 11vh);
-  }
-  100% {
-    transform: translate(-50%, -50%) translate(20vw, 10vh);
-  }
-}
-
-@keyframes float2 {
-  0% {
-    transform: translate(-50%, -50%) translate(30vw, -15vh);
-  }
-  50% {
-    transform: translate(-50%, -50%) translate(29vw, -16vh);
-  }
-  100% {
-    transform: translate(-50%, -50%) translate(30vw, -15vh);
-  }
-}
-
-@keyframes float3 {
-  0% {
-    transform: translate(-50%, -50%) translate(-20vw, -20vh);
-  }
-  50% {
-    transform: translate(-50%, -50%) translate(-21vw, -19vh);
-  }
-  100% {
-    transform: translate(-50%, -50%) translate(-20vw, -20vh);
-  }
-}
-
-@keyframes float4 {
-  0% {
-    transform: translate(-50%, -50%) translate(-30vw, 15vh);
-  }
-  50% {
-    transform: translate(-50%, -50%) translate(-29vw, 14vh);
-  }
-  100% {
-    transform: translate(-50%, -50%) translate(-30vw, 15vh);
-  }
-}
-
-@keyframes float5 {
-  0% {
-    transform: translate(-50%, -50%) translate(0, 25vh);
-  }
-  50% {
-    transform: translate(-50%, -50%) translate(1vw, 24vh);
-  }
-  100% {
-    transform: translate(-50%, -50%) translate(0, 25vh);
-  }
+  opacity: 0.7;
+  width: 60%;
+  height: 60%;
 }
 
 .nav-list {
@@ -101,56 +41,49 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  animation-duration: 3s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-}
-
-.item-container:nth-of-type(1) {
-  animation-name: float1;
-}
-
-.item-container:nth-of-type(2) {
-  animation-name: float2;
-}
-
-.item-container:nth-of-type(3) {
-  animation-name: float3;
-}
-
-.item-container:nth-of-type(4) {
-  animation-name: float4;
-}
-
-.item-container:nth-of-type(5) {
-  animation-name: float5;
+  z-index: 2; /* Ensures nav items are above the layers */
 }
 
 .nav-sphere {
-  display: inline-block;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 50%;
   width: 150px;
   height: 150px;
-  line-height: 150px;
-  text-align: center;
   text-decoration: none;
-  background-color: #2b91b9;
+  background: linear-gradient(145deg, #1b8db9, #329bd9);
   color: white;
-  transition: background-color 0.3s ease;
+  font-size: 1.2em;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  z-index: 3; /* Ensures nav spheres are above other items */
 }
 
 .nav-sphere:hover {
-  background-color: #4e2bb9;
+  transform: scale(1.1);
+  background: linear-gradient(145deg, #329bd9, #47a9e6);
+}
+
+.nav-sphere::before {
+  content: '';
+  position: absolute;
+  top: -10px; right: -10px; bottom: -10px; left: -10px;
+  background: linear-gradient(145deg, transparent, rgba(255, 255, 255, 0.3));
+  border-radius: inherit;
+  z-index: -1;
 }
 
 @media (max-width: 768px) {
   .nav-sphere {
     width: 100px;
     height: 100px;
-    line-height: 100px;
+    font-size: 0.8em;
   }
   .layer1, .layer2 {
-    width: 85%; /* Larger size for mobile */
-    height: 85%; /* Larger size for mobile */
+    width: 85%;
+    height: 85%;
   }
 }
+
